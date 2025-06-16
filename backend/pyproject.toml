@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "backend"
+version = "0.1.0"
+description = "Backend for social-robot"
+authors = ["shindeshubhamm <shubhamshinde.3151@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.111.1"
+uvicorn = "^0.30.3"
+pydantic = "^2.8.2"
+pydantic-settings = "^2.3.4"
+loguru = "^0.7.2"
+google-cloud-speech = "^2.27.0"
+google-cloud-texttospeech = "^2.17.2"
+pymongo = "^4.10.1"
+proquint = "^0.2.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
