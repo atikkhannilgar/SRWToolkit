@@ -1,0 +1,73 @@
+services:
+  mongodb:
+    image: mongo:noble
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=password
+      - MONGO_INITDB_DATABASE=socialrobot
+    volumes:
+      - ./data:/data/db
+    ports:
+      - "27018:27017"
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh --quiet mongodb://root:password@localhost:27017/admin
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    command: mongod --quiet --logpath /dev/null
+
+  backend:
+    build: backend
+    ports:
+      - "1339:1339"
+      - "1339:1339/tcp"
+      - "1339:1339/udp"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=1339
+      - DEBUG=1
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/gcp-service-account.json
+      - MONGODB_URL=mongodb://root:password@mongodb:27017/
+      - DB_NAME=socialrobot
+      - LLM_URL=http://host.docker.internal:11434
+    volumes:
+      - ./backend:/app
+      - ./backend/gcp-service-account.json:/app/gcp-service-account.json
+    command: ["uvicorn", "--host", "0.0.0.0", "--port", "1339", "--reload", "api.app:app"]
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    #### in case port 8000 is not accessible from the backend container, uncomment the 'network_mode' below and comment 'extra_hosts' above
+    #### make sure to make changes to MONGODB_URL and LLM_URL environment variables above as:
+    #### MONGODB_URL: mongodb://root:password@localhost:27018/
+    #### LLM_URL: http://localhost:11434
+
+    # network_mode: host
+
+  bot:
+    build: frontend/bot
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./frontend/bot:/app:cached
+      - /app/node_modules
+    environment:
+      - PORT=5001
+    depends_on:
+      - backend
+
+  controlpanel:
+    build: frontend/controlpanel
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
+      - REACT_APP_BOT_URL=http://localhost:5001
+    volumes:
+      - ./frontend/controlpanel:/app:cached
+      - /app/node_modules
+    depends_on:
+      - backend
