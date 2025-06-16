@@ -1,0 +1,147 @@
+.layout-wrapper {
+  .layout {
+    width: 75%;
+    padding: 0 20px;
+    margin: 30px auto;
+  }
+  .communication-info {
+    margin: 10px;
+    color: $primaryWhite;
+    font-size: 14px;
+    .detail-wrapper {
+      display: flex;
+      .detail-name {
+        font-weight: 600;
+        margin-right: 4px;
+      }
+      .detail-value {
+        color: #bcbfcf;
+      }
+      .detail-value-status {
+        display: flex;
+        align-items: center;
+        .status-color {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          margin: 0 4px;
+        }
+        .status-connected {
+          background-color: $successBright;
+        }
+        .status-connecting {
+          background-color: $warning;
+        }
+        .status-notconnected {
+          background-color: $error;
+        }
+      }
+    }
+  }
+
+  @include responsive($md) {
+    .layout {
+      width: 92%;
+    }
+  }
+}
+
+.snacklist-wrapper {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 200;
+  .lay-snackbar {
+    width: 400px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    box-shadow:
+      0 4px 8px rgba(0, 0, 0, 0.5),
+      0 6px 20px rgba(0, 0, 0, 0.4);
+    .lay-snack-contents {
+      width: 100%;
+      height: 100%;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .lay-snack-left {
+      display: flex;
+      align-items: center;
+      max-width: 80%;
+      .ls-icon-wrapper {
+        margin-right: 10px;
+        .ls-icon {
+          font-size: 20px;
+          color: #ffffff;
+        }
+      }
+      .ls-message-wrapper {
+        .ls-message {
+          margin: 0;
+          font-weight: 500;
+          color: #ffffff;
+          overflow: hidden;
+          hyphens: auto;
+        }
+      }
+    }
+    .ls-close-btn {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      padding: 0;
+      border-radius: 50%;
+      justify-content: center;
+      align-items: center;
+      width: 32px;
+      height: 32px;
+      margin-left: 10px;
+      .ls-close-icon {
+        color: #ffffff;
+        font-size: 18px;
+      }
+    }
+  }
+  .lay-snackbar-success {
+    background-color: #{$success}22;
+    border-left: 6px solid $success;
+    .ls-close-btn {
+      &:hover {
+        background-color: #{$success}11;
+      }
+    }
+  }
+  .lay-snackbar-warning {
+    background-color: #{$warning}22;
+    border-left: 6px solid $warning;
+    .ls-close-btn {
+      &:hover {
+        background-color: #{$warning}11;
+      }
+    }
+  }
+  .lay-snackbar-error {
+    background-color: #{$error}33;
+    border-left: 6px solid $error;
+    .ls-close-btn {
+      &:hover {
+        background-color: #{$error}11;
+      }
+    }
+  }
+  .lay-snackbar-info {
+    background-color: #{$info}33;
+    border-left: 6px solid $info;
+    .ls-close-btn {
+      &:hover {
+        background-color: #{$info}11;
+      }
+    }
+  }
+}

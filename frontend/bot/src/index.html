@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Assistant Avatar</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #222;
+            margin: 0;
+        }
+
+        .avatar {
+            width: 200px;
+            height: 150px;
+            position: relative;
+            background-color: transparent;
+            border: 3px solid #fff;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .eye {
+            width: 50px;
+            height: 4px;
+            background-color: #76c7c0;
+            position: absolute;
+        }
+
+        .eye.left {
+            left: 50px;
+        }
+
+        .eye.right {
+            right: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="avatar">
+        <div class="eye left"></div>
+        <div class="eye right"></div>
+    </div>
+</body>
+
+</html>

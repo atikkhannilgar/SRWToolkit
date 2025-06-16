@@ -1,0 +1,128 @@
+.avatar-wrapper {
+  display: flex;
+  justify-content: center;
+  .avatar {
+    position: absolute;
+    margin-top: 100px;
+    animation-name: up-down-movement;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    .avatar-body {
+      margin: 0 auto;
+      -webkit-user-drag: none;
+      user-select: none;
+    }
+    .avatar-face {
+      position: absolute;
+      left: 50%;
+      height: 120px;
+      transform: translate(-50%, -50%);
+      .avatar-eyes {
+        width: $avatarWidth * 0.34;
+        display: flex;
+        justify-content: space-between;
+        .avatar-eye {
+          background-color: $primaryLight;
+        }
+      }
+      .avatar-mouth {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 72px;
+        height: 10px;
+        background: $primaryLight;
+        border-radius: 50%;
+        margin: 0 auto;
+        transition: all 180ms ease;
+      }
+      .avatar-mouth-open-100 {
+        height: 50px;
+        width: 72px;
+      }
+      .avatar-mouth-open-90 {
+        height: 45px;
+        width: 68px;
+      }
+      .avatar-mouth-open-80 {
+        height: 40px;
+        width: 64px;
+      }
+      .avatar-mouth-open-65 {
+        height: 36px;
+        width: 72px;
+        transform: translateX(-50%) rotate(4deg);
+      }
+      .avatar-mouth-open-60 {
+        height: 32px;
+        width: 60px;
+      }
+      .avatar-mouth-open-50 {
+        height: 28px;
+        width: 62px;
+      }
+      .avatar-mouth-open-30 {
+        height: 25px;
+        width: 72px;
+      }
+      .avatar-mouth-open-20 {
+        height: 20px;
+        width: 45px;
+        transform: translateX(-50%) rotate(-4deg);
+      }
+      .avatar-mouth-open-10 {
+        height: 10px;
+        width: 72px;
+      }
+    }
+  }
+
+  // SIMPLE
+  .avatar-simple-custom {
+    .avatar-body {
+      height: 50vh;
+    }
+    .avatar-face {
+      top: 32%;
+    }
+  }
+
+  // FULLBOT
+  .avatar-fullbot-custom {
+    .avatar-body {
+      height: 70vh;
+    }
+    .avatar-face {
+      top: 24%;
+    }
+  }
+
+  // FACEONLY
+  .avatar-faceonly-custom {
+    .avatar-body {
+      height: 60vh;
+    }
+    .avatar-face {
+      top: 52%;
+    }
+  }
+}
+
+// ANIMATIONS
+.avatar-eyes-normal {
+  height: 140px;
+  .avatar-eye {
+    animation-name: blink-normal;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+  }
+}
+.avatar-eyes-sleepy {
+  height: 140px;
+  .avatar-eye {
+    animation-name: blink-sleepy;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    background-color: $primaryLight;
+  }
+}

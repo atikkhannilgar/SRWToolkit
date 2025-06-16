@@ -1,0 +1,90 @@
+@keyframes up-down-movement {
+  0% {
+    top: 0%;
+  }
+  60% {
+    top: 10%;
+  }
+  100% {
+    top: 0%;
+  }
+}
+
+// Happy
+$maxEyeSize: 84px;
+@keyframes blink-normal {
+  0% {
+    width: Min($avatarEyeWidth * 0.88, $maxEyeSize);
+    height: Min($avatarEyeWidth * 0.88, $maxEyeSize);
+    border-radius: 50%;
+  }
+  47% {
+    width: Min($avatarEyeWidth * 0.88, $maxEyeSize);
+    height: Min($avatarEyeWidth * 0.88, $maxEyeSize);
+    border-radius: 50%;
+  }
+  48% {
+    width: Min($avatarEyeWidth * 0.88, $maxEyeSize);
+    height: 20px * $avatarEyeScale;
+    border-radius: 0;
+  }
+  52% {
+    width: Min($avatarEyeWidth * 0.88, $maxEyeSize);
+    height: Min($avatarEyeWidth * 0.88, $maxEyeSize);
+    border-radius: 50%;
+  }
+  100% {
+    width: Min($avatarEyeWidth * 0.88, $maxEyeSize);
+    height: Min($avatarEyeWidth * 0.88, $maxEyeSize);
+    border-radius: 50%;
+  }
+}
+
+// Sleepy
+@keyframes blink-sleepy {
+  0% {
+    width: 100px;
+    height: 50px;
+    border-radius: 0 0 #{$avatarEyeWidth * 2} #{$avatarEyeWidth * 2};
+  }
+  47% {
+    width: 100px;
+    height: 50px;
+    border-radius: 0 0 #{$avatarEyeWidth * 2} #{$avatarEyeWidth * 2};
+  }
+  48% {
+    width: 100px;
+    height: 20px;
+    border-radius: 0;
+  }
+  52% {
+    width: 100px;
+    height: 50px;
+    border-radius: 0 0 #{$avatarEyeWidth * 2} #{$avatarEyeWidth * 2};
+  }
+  100% {
+    width: 100px;
+    height: 50px;
+    border-radius: 0 0 #{$avatarEyeWidth * 2} #{$avatarEyeWidth * 2};
+  }
+}
+
+@keyframes pulse {
+  0% {
+    background-color: red;
+  }
+  50% {
+    background-color: #f06c6c;
+  }
+  100% {
+    background-color: red;
+  }
+}
+
+// Surprised
+// Blinking
+// Annoyed
+// Neutral
+// Confused
+// Angry
+// Sad

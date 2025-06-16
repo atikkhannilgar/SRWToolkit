@@ -1,0 +1,252 @@
+.cp-wrapper {
+  .cp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .cph-name-wrapper {
+      display: flex;
+      align-items: center;
+      .cph-icon {
+        color: $primary;
+        font-size: 32px;
+      }
+      .cph-name {
+        color: $primary;
+        margin-left: 10px;
+        font-size: 24px;
+        font-weight: 700;
+      }
+    }
+    .cph-status-wrapper {
+      display: flex;
+      align-items: center;
+      .cph-bot-status {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50px;
+        padding: 16px 20px 18px 16px;
+        background-color: $secondaryDark;
+        margin-right: 12px;
+        .cph-bot-connectstatus {
+          border-radius: 50%;
+          width: 10px;
+          height: 10px;
+        }
+        .cph-bot-status-success {
+          background-color: $successBright;
+        }
+        .cph-bot-status-failure {
+          background-color: $error;
+        }
+        .cph-bot-counttext {
+          margin: 0;
+          font-size: 14px;
+          font-weight: 600;
+          color: $primaryLight;
+          margin-left: 16px;
+        }
+      }
+      .cph-addbot-button {
+        display: flex;
+        align-items: center;
+        background-color: $primary;
+        border: none;
+        border-radius: 50px;
+        padding: 16px 20px 18px 16px;
+        cursor: pointer;
+        .cph-addicon {
+          font-size: 18px;
+          color: $secondary;
+          margin-right: 12px;
+        }
+        .cph-addtext {
+          font-size: 14px;
+          font-weight: 600;
+          color: $primaryLight;
+          margin: 0;
+        }
+
+        &:hover {
+          background-color: #{$primary}dd;
+        }
+        &:disabled {
+          background-color: #{$primary}88;
+          .cph-addtext {
+            color: #{$primaryLight}aa;
+          }
+        }
+      }
+    }
+  }
+}
+
+.cp-body {
+  color: $primaryWhite;
+  padding-top: 32px;
+}
+.cpb-section {
+  margin-bottom: 30px;
+  .cpb-header {
+    font-weight: 500;
+    font-size: 18px;
+  }
+  .cpb-content {
+    padding: 20px 0;
+  }
+}
+
+.cpb-proactive-button {
+  background-color: $primary;
+  border: none;
+  border-radius: 50px;
+  padding: 16px 20px;
+  cursor: pointer;
+  color: $primaryWhite;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "Inter";
+  &:hover {
+    background-color: #{$primary}dd;
+  }
+}
+
+.cpb-skins-container {
+  display: flex;
+  .skin-wrapper {
+    position: relative;
+    outline: 2px solid $secondaryDark;
+    border-radius: 10px;
+    width: 150px;
+    height: 200px;
+    padding: 10px;
+    margin-right: 10px;
+    -webkit-user-drag: none;
+    user-select: none;
+    cursor: pointer;
+    .skin-img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -60%);
+      max-height: 75%;
+      max-width: 80%;
+    }
+    .skin-name {
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translate(-50%);
+      padding-top: 20px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+  }
+  .skin-wrapper-selected {
+    outline: 3px solid $primary;
+    background-color: #{$secondaryDark2};
+  }
+}
+
+.cpb-controls-section {
+  display: flex;
+  flex-wrap: wrap;
+  .cpb-control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20px 20px 20px;
+    .cpb-icon-button {
+      background-color: $teal;
+      border-radius: 50%;
+      border: none;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+      cursor: pointer;
+      .cpb-control-icon {
+        font-size: 28px;
+        color: $primaryDark;
+      }
+      &:hover {
+        background-color: #{$teal}dd;
+      }
+    }
+    .cpb-control-name {
+      font-size: 14px;
+      font-weight: 500;
+      color: $primaryWhite;
+      margin-bottom: 2px;
+    }
+    .cpb-control-state {
+      font-size: 12px;
+      color: $gray;
+      font-weight: 600;
+    }
+  }
+  .cpb-control-2wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    .cpb-control-2 {
+      margin: 0 20px;
+      display: flex;
+      flex-direction: column;
+      .cpb-select-label {
+        font-size: 14px;
+        margin-bottom: 8px;
+      }
+      .cpb-select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: 100%;
+        padding: 10px 12px;
+        font-size: 16px;
+        border: 3px solid $teal;
+        border-radius: 12px;
+        background-color: $secondaryDark;
+        cursor: pointer;
+        font-family: "Inter";
+        font-size: 14px;
+        color: $primaryWhite;
+
+        // Custom dropdown arrow
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232bebc8' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+        background-size: 16px;
+        padding-right: 40px;
+
+        // Focus state
+        &:focus {
+          outline: none;
+          border-color: $primary;
+          box-shadow: 0 0 0 2px $secondary;
+        }
+
+        // Hover state
+        &:hover {
+          border-color: $gray;
+        }
+      }
+      .cpb-dropdown {
+        border-radius: 12px;
+      }
+    }
+  }
+  .cpb-control-disabled {
+    .cpb-icon-button {
+      background-color: #{$secondaryDark}aa;
+      .cpb-control-icon {
+        color: #{$primaryLight}aa;
+      }
+      &:hover {
+        background-color: #{$secondaryDark}66;
+      }
+    }
+  }
+}

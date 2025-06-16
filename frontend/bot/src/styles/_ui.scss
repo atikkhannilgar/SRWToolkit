@@ -1,0 +1,236 @@
+// Snackbars
+.snacklist-wrapper {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 200;
+  .lay-snackbar {
+    width: 400px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    box-shadow:
+      0 4px 8px rgba(0, 0, 0, 0.5),
+      0 6px 20px rgba(0, 0, 0, 0.4);
+    .lay-snack-contents {
+      width: 100%;
+      height: 100%;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .lay-snack-left {
+      display: flex;
+      align-items: center;
+      max-width: 80%;
+      .ls-icon-wrapper {
+        margin-right: 10px;
+        .ls-icon {
+          font-size: 20px;
+          color: #ffffff;
+        }
+      }
+      .ls-message-wrapper {
+        .ls-message {
+          margin: 0;
+          font-weight: 500;
+          color: #ffffff;
+          overflow: hidden;
+          hyphens: auto;
+        }
+      }
+    }
+    .ls-close-btn {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      padding: 0;
+      border-radius: 50%;
+      justify-content: center;
+      align-items: center;
+      width: 32px;
+      height: 32px;
+      margin-left: 10px;
+      .ls-close-icon {
+        color: #ffffff;
+        font-size: 18px;
+      }
+    }
+  }
+  .lay-snackbar-success {
+    background-color: #{$success}22;
+    border-left: 6px solid $success;
+    .ls-close-btn {
+      &:hover {
+        background-color: #{$success}11;
+      }
+    }
+  }
+  .lay-snackbar-warning {
+    background-color: #{$warning}22;
+    border-left: 6px solid $warning;
+    .ls-close-btn {
+      &:hover {
+        background-color: #{$warning}11;
+      }
+    }
+  }
+  .lay-snackbar-error {
+    background-color: #{$error}33;
+    border-left: 6px solid $error;
+    .ls-close-btn {
+      &:hover {
+        background-color: #{$error}11;
+      }
+    }
+  }
+  .lay-snackbar-info {
+    background-color: #{$info}33;
+    border-left: 6px solid $info;
+    .ls-close-btn {
+      &:hover {
+        background-color: #{$info}11;
+      }
+    }
+  }
+}
+
+// Controls
+.user-controls {
+  position: fixed;
+  left: 50%;
+  bottom: 30px;
+  transform: translate(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .uc-recording-wrapper {
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 4px;
+    // background-color: #{$primaryWhite}33;
+    background-color: rgb(99, 99, 99);
+    border-radius: 0.25em;
+    height: 24px;
+    width: 90px;
+    .uc-recording-circle {
+      background-color: red;
+      width: 1em;
+      height: 1em;
+      border-radius: 50%;
+      animation: ease pulse 2s infinite;
+      margin-right: 0.25em;
+    }
+    .uc-recording-text {
+      color: $primaryWhite;
+      font-size: 14px;
+    }
+  }
+  .uc-bgwrapper {
+    border-radius: 100px;
+    box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
+    backdrop-filter: blur(14px);
+    background-color: #{$primaryWhite}33;
+    padding: 8px;
+    .uc-wrapper {
+      display: flex;
+      align-items: center;
+      .uc-button {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background-color: $primaryLight2;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        .uc-icon {
+          font-size: 28px;
+          color: $primaryDark;
+        }
+        &:hover {
+          background-color: $primaryLight;
+        }
+      }
+      .uc-stop-button {
+        background-color: #e5342f;
+        margin-right: 8px;
+        .uc-icon {
+          color: $primaryWhite;
+        }
+        &:hover {
+          background-color: #c72c27;
+        }
+      }
+      .uc-textinput-wrapper {
+        position: relative;
+        .uc-textinput {
+          margin-left: 8px;
+          border-radius: 100px;
+          padding: 20px;
+          padding-right: 70px;
+          font-size: 16px;
+          width: 400px;
+          border: none;
+          font-family: "Inter";
+          outline: 0px solid $primaryLight2;
+          background-color: $primaryDark;
+          color: $primaryWhite;
+          &:focus {
+            outline-width: 3px;
+          }
+        }
+        .uc-sendbutton {
+          position: absolute;
+          right: 2px;
+          top: 2px;
+          outline: 2px solid $primaryDark;
+        }
+      }
+      .uc-textconfig-audiodisabled {
+        .uc-textinput {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
+
+.loader {
+  width: 100px;
+  aspect-ratio: 4;
+  --_g: no-repeat radial-gradient(circle closest-side, #5dbe6b 90%, #0000);
+  background:
+    var(--_g) 0% 50%,
+    var(--_g) 50% 50%,
+    var(--_g) 100% 50%;
+  background-size: calc(100% / 3) 100%;
+  animation: l7 1s infinite linear;
+}
+@keyframes l7 {
+  33% {
+    background-size:
+      calc(100% / 3) 0%,
+      calc(100% / 3) 100%,
+      calc(100% / 3) 100%;
+  }
+  50% {
+    background-size:
+      calc(100% / 3) 100%,
+      calc(100% / 3) 0%,
+      calc(100% / 3) 100%;
+  }
+  66% {
+    background-size:
+      calc(100% / 3) 100%,
+      calc(100% / 3) 100%,
+      calc(100% / 3) 0%;
+  }
+}
