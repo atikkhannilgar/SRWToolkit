@@ -36,6 +36,17 @@ Packages:
 | Backend     | `pymongo`                   | ^4.10.1  | Python driver for MongoDB database                                    |
 | Backend     | `proquint`                  | ^0.2.1   | Implementation of human-readable IDs                                  |
 
+Local LLMs used in this toolkit:
+
+| Model Name      | Version | Developer/Organization | Parameter Size | Model Size |
+| --------------- | ------- | ---------------------- | -------------- | ---------- |
+| `llama`         | ^3.2    | Meta                   | 3.21B          | 2 GB       |
+| `gemma`         | ^2.0    | Google                 | 9.24B          | 5.4 GB     |
+| `Phi`           | ^3.5    | Microsoft              | 3.82B          | 2.2 GB     |
+| `nemotron-mini` | ^1.0    | NVIDIA                 | 4.19B          | 2.7 GB     |
+| `qwen`          | ^2.5    | AliBaba                | 7.62B          | 4.7 GB     |
+
+
 ## Running the project
 
 To get the project running, one of the two methods can be used. Both the methods also get the database up in running. Additional pre-requisites are:
