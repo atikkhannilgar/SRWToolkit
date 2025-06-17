@@ -19,6 +19,23 @@ Standard ports used for the services are:
 - Ollama: `11434`
 - MongoDB: `27018` (`27017` within the container)
 
+Packages:
+
+| Environment | Package                     | Version  | Description                                                           |
+| ----------- | --------------------------- | -------- | --------------------------------------------------------------------- |
+| Frontend    | `react`                     | ^18.3.1  | A JavaScript library for building user interfaces                     |
+| Frontend    | `react-redux`               | ^9.1.2   | A JavaScript library for UI state management                          |
+| Frontend    | `@reduxjs/toolkit`          | ^2.2.7   | Toolset for efficient Redux development                               |
+| Frontend    | `sass`                      | ^1.77.7  | CSS extension for styling the webpage                                 |
+| Frontend    | `typescript`                | ^5.5.4   | JavaScript extension for strong typing                                |
+| Backend     | `fastapi`                   | ^0.111.1 | Web framework for building APIs with Python                           |
+| Backend     | `uvicorn`                   | ^0.30.3  | ASGI server implementation for serving FastAPI APIs                   |
+| Backend     | `pydantic`                  | ^2.8.2   | Data validation and settings management using Python type annotations |
+| Backend     | `google-cloud-speech`       | ^2.27.0  | Google’s speech-to-text Python client                                 |
+| Backend     | `google-cloud-texttospeech` | ^2.17.2  | Google’s text-to-speech Python client                                 |
+| Backend     | `pymongo`                   | ^4.10.1  | Python driver for MongoDB database                                    |
+| Backend     | `proquint`                  | ^0.2.1   | Implementation of human-readable IDs                                  |
+
 ## Running the project
 
 To get the project running, one of the two methods can be used. Both the methods also get the database up in running. Additional pre-requisites are:
